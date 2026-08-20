@@ -1,0 +1,2684 @@
+/* =========================================================
+   1. VARIABLES / BASE DE PÁGINA
+   ========================================================= */
+
+.hb-page {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0;
+  background: var(--primary-primary-100, #ffe1e4);
+  row-gap: 0;
+}
+
+.hb-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 0;
+}
+
+.hb-band {
+  width: 100%;
+  padding: 0;
+}
+
+.hb-band:first-of-type {
+  padding: 0;
+}
+
+.hb-band:first-of-type .hb-hero {
+  margin: 0;
+}
+
+.hb-band--100 {
+  background: var(--primary-primary-100, #e1ffe6);
+}
+
+.hb-band--50 {
+  background: var(--primary-primary-50, #fef2f3);
+}
+
+.hb-band > .hb-section,
+.hb-band > .hb-partner-signup,
+.hb-band > .hb-footer {
+  max-width: var(--hb-layout-max);
+  margin-inline: auto;
+}
+
+.hb-band--footer {
+  padding-top: clamp(2rem, 5vh, 3rem);
+  padding-bottom: clamp(1.5rem, 4vh, 2.5rem);
+}
+
+
+/* =========================================================
+   2. HEADER / NAVBAR
+   ========================================================= */
+
+.hb-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 1.25rem clamp(1rem, 5vw, 4rem);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+
+  background: var(--primary-primary-100, #ffe1e4);
+}
+
+.hb-header-inner {
+  width: 100%;
+  max-width: var(--hb-layout-max);
+  margin-inline: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.hb-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.hb-logo-text {
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  color: var(--hb-navy);
+}
+
+.hb-nav {
+  display: flex;
+  gap: 1.75rem;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  color: var(--hb-navy);
+  opacity: 0.92;
+}
+
+.hb-nav a:hover {
+  color: #4760ff;
+}
+
+.hb-header-actions {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   3. BOTONES GENERALES
+   ========================================================= */
+
+.hb-btn,
+.hb-btn2 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.5rem;
+
+  padding: 0.85rem 1.8rem;
+
+  border-radius: 9999px;
+
+  font-weight: 600;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.hb-btn-solid {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #4760ff;
+}
+
+.hb-btn-solid:hover {
+  transform: translateY(-2px);
+
+  background: rgba(71, 96, 255, 0.15);
+
+  box-shadow:
+    0 8px 20px rgba(0, 212, 255, 0.3);
+}
+
+.hb-btn-outline {
+  background: transparent;
+  color: #4760FF;
+  border-color: #4760FF;
+}
+
+.hb-btn-outline:hover {
+  background: #4760FF;
+}
+
+.hb-btn-lg,
+.hb-btn2-lg {
+  padding: 0.85rem 1.5rem;
+  font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   4. HERO
+   ========================================================= */
+
+.hb-hero {
+  position: relative;
+  isolation: isolate;
+
+  width: 100vw;
+  max-width: none;
+
+  min-height: min(82dvh, 920px);
+
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: clamp(4rem, 8vh, 6rem) clamp(1rem, 5vw, 4rem);
+
+  overflow: hidden;
+
+  background: #071026;
+}
+
+.hb-hero2 {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 560px;
+
+  align-items: center;
+
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.hb-hero-copy {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.hb-hero-gallery {
+  position: relative;
+
+  width: 100%;
+  max-width: 560px;
+  height: 520px;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+}
+
+.hb-hero-img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  filter: drop-shadow(
+    0 24px 48px rgba(27, 39, 72, 0.12)
+  );
+}
+
+
+/* =========================================================
+   5. HERO - FONDO / CARRUSEL
+   ========================================================= */
+
+.hb-hero-background {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 0;
+
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hb-background-image {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  opacity: 0;
+
+  transition: opacity 1.2s ease-in-out;
+
+  pointer-events: none;
+}
+
+.hb-background-image-active {
+  opacity: 1;
+}
+
+.hb-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background: rgba(7, 16, 38, 0.15);
+
+  pointer-events: none;
+}
+
+.hb-gallery-image {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  opacity: 0;
+
+  transition: opacity 1s ease-in-out;
+}
+
+.hb-gallery-image-active {
+  opacity: 0;
+}
+
+
+/* =========================================================
+   6. HERO - TEXTOS
+   ========================================================= */
+
+.hb-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.5rem;
+
+  margin: 0 0 1.5rem;
+
+  padding: 0.35rem 0.9rem;
+
+  border-radius: 9999px;
+
+  background: rgba(0, 217, 245, 0.1);
+  border: 1px solid rgba(0, 217, 245, 0.25);
+
+  color: #4CD7F6;
+
+  font-size: 0.75rem;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+}
+
+.hb-title {
+  margin: 0 0 1.25rem;
+
+  font-size: clamp(2rem, 4vw, 3.25rem);
+
+  font-weight: 800;
+
+  line-height: 1.2;
+
+  color: #ffffff;
+
+  text-align: center;
+}
+
+.hb-title-line {
+  display: block;
+}
+
+.hb-accent {
+  color: #38bdf8;
+}
+
+.hb-sub {
+  width: 100%;
+  max-width: 680px;
+
+  margin: 0 auto 2rem;
+
+  font-size: 1rem;
+  line-height: 1.6;
+
+  color: #cbd5e1;
+
+  text-align: center;
+}
+
+.hb-cta-row {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 1rem;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 2.5rem;
+}
+
+.btn-flecha {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+
+/* =========================================================
+   7. HERO - BOTONES SECUNDARIOS
+   ========================================================= */
+
+.hb-btn2-solid {
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #00d4ff
+  );
+
+  color: #ffffff;
+
+  border: none;
+}
+
+.hb-btn2-solid:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(0, 212, 255, 0.3);
+}
+
+.hb-btn2-outline {
+  background: transparent;
+
+  color: var(--hb-red);
+
+  border-color: var(--hb-red);
+}
+
+.hb-btn2-outline:hover {
+  background: #fff0f1;
+}
+
+.hb-btn2:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   8. HERO - STATS / TARJETAS / TOASTS
+   ========================================================= */
+
+.hb-stats div {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.2rem;
+}
+
+.hb-stats dt {
+  margin: 0;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  color: #cbd5e1;
+  opacity: 0.9;
+}
+
+.hb-stats dd {
+  margin: 0;
+}
+
+.hb-glass-card {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 820px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 3rem 2.5rem;
+
+  background: rgba(13, 27, 62, 0.45);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.4);
+
+  text-align: center;
+  color: #ffffff;
+
+  box-sizing: border-box;
+}
+
+.hb-toast {
+  position: absolute;
+  z-index: 3;
+
+  background: var(--hb-red);
+  color: #fff;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  padding: 0.5rem 0.75rem;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 8px 24px rgba(60, 41, 148, 0.35);
+
+  max-width: 200px;
+
+  line-height: 1.25;
+}
+
+.hb-toast-tr {
+  top: 8%;
+  right: -4%;
+}
+
+.hb-toast-bl {
+  bottom: 18%;
+  left: -6%;
+}
+
+
+/* =========================================================
+   9. SECCIÓN TECNOLOGÍA
+   ========================================================= */
+
+.tech-section {
+  width: 100%;
+
+  padding: 5rem 2rem;
+
+  box-sizing: border-box;
+
+  background: #071026;
+}
+
+.tech-container {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+.tech-main-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(420px, 560px);
+
+  align-items: center;
+
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.tech-info {
+  width: 100%;
+  max-width: 600px;
+}
+
+.tech-title {
+  margin: 0 0 1.5rem;
+
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+
+  font-weight: 800;
+  line-height: 1.1;
+
+  color: #ffffff;
+}
+
+.tech-desc {
+  margin: 0 0 1rem;
+
+  max-width: 580px;
+
+  font-size: 1rem;
+  line-height: 1.7;
+
+  color: #cbd5e1;
+}
+
+.tech-highlight {
+  margin: 0 0 1.5rem;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  color: #4CD7F6;
+}
+
+
+/* =========================================================
+   10. TECNOLOGÍAS
+   ========================================================= */
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 0.7rem;
+}
+
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.4rem;
+
+  padding: 0.5rem 0.8rem;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  color: #ffffff;
+
+  font-size: 0.8rem;
+}
+
+.badge-pipe {
+  color: #4CD7F6;
+}
+
+.badge-icon {
+  font-size: 1rem;
+}
+
+
+/* =========================================================
+   11. CARRUSEL DE TECNOLOGÍA
+   ========================================================= */
+
+.tech-carousel {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+}
+
+.carousel-window {
+  position: relative;
+
+  width: 100%;
+  height: 420px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+}
+
+.carousel-img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  opacity: 0;
+
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-img-active {
+  opacity: 1;
+}
+
+.carousel-dots {
+  position: absolute;
+
+  left: 50%;
+  bottom: 1rem;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+
+  gap: 0.5rem;
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   12. DOTS
+   ========================================================= */
+
+.dot {
+  width: 8px;
+  height: 8px;
+
+  min-width: 8px;
+  min-height: 8px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.5);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.dot.active {
+  width: 8px;
+  height: 8px;
+
+  min-width: 8px;
+  min-height: 8px;
+
+  border-radius: 50%;
+
+  background: #4CD7F6;
+
+  transform: scale(1.4);
+}
+
+
+/* =========================================================
+   13. CLIENTES
+   ========================================================= */
+
+.tech-clients-section {
+  width: 100%;
+
+  margin-top: 5rem;
+
+  text-align: center;
+}
+
+.clients-title {
+  margin: 0 0 2rem;
+
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+.clients-slider {
+  position: relative;
+
+  width: 100%;
+  max-width: 1000px;
+
+  margin: 0 auto;
+}
+
+.clients-window {
+  width: 100%;
+
+  overflow: hidden;
+}
+
+.clients-track {
+  display: flex;
+
+  width: 240%;
+  height: 110px;
+
+  will-change: transform;
+}
+
+.client-card {
+  flex: 0 0 calc(100% / 12);
+
+  width: calc(100% / 12);
+  height: 110px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
+
+  box-sizing: border-box;
+}
+
+.client-card img {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: 150px;
+  max-height: 65px;
+
+  object-fit: contain;
+}
+
+.clients-dots {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.5rem;
+
+  margin-top: 1.25rem;
+}
+
+.clients-dots .dot {
+  width: 8px;
+  height: 8px;
+
+  min-width: 8px;
+  min-height: 8px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.5);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.clients-dots .dot.active {
+  width: 8px;
+  height: 8px;
+
+  min-width: 8px;
+  min-height: 8px;
+
+  border-radius: 50%;
+
+  background: #4CD7F6;
+
+  transform: scale(1.4);
+}
+
+
+/* =========================================================
+   14. SECCIONES LANDING
+   ========================================================= */
+
+.hb-section {
+  width: 100%;
+  max-width: var(--hb-layout-max);
+
+  margin: clamp(2rem, 6vh, 4rem) auto 0;
+
+  padding-inline: 0;
+}
+
+.hb-band:first-of-type .hb-hero {
+  margin-top: 0;
+}
+
+.hb-band .hb-section:first-child {
+  margin-top: clamp(1.5rem, 4vh, 2.5rem);
+  margin-bottom: clamp(1.5rem, 4vh, 2.5rem);
+}
+
+.hb-section-eyebrow {
+  margin: 0 0 clamp(1.75rem, 4vw, 2.5rem);
+
+  text-align: center;
+
+  font-size: clamp(1.75rem, 2.5vw + 1rem, 2.75rem);
+
+  font-weight: 800;
+  line-height: 1.08;
+
+  letter-spacing: -0.02em;
+
+  text-transform: uppercase;
+}
+
+.hb-section-title {
+  margin: 0 0 0.5rem;
+
+  text-align: center;
+
+  font-size: 0.72rem;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  color: white;
+}
+
+
+/* =========================================================
+   15. CÓMO FUNCIONA
+   ========================================================= */
+
+.hb-how-strip {
+  display: flex;
+  align-items: stretch;
+
+  border: 1px solid rgba(244, 54, 76, 0.22);
+
+  border-radius: 20px;
+
+  background: var(--hb-surface-01);
+
+  overflow: hidden;
+
+  box-shadow:
+    0 12px 40px rgba(27, 39, 72, 0.05);
+}
+
+.hb-how-step-wrap {
+  position: relative;
+
+  flex: 1 1 0;
+  min-width: 0;
+
+  display: flex;
+  align-items: stretch;
+}
+
+.hb-how-step-wrap:not(:first-child) {
+  border-left: 1px solid rgba(244, 54, 76, 0.18);
+}
+
+.hb-how-arrow {
+  position: absolute;
+
+  left: 0;
+  top: 50%;
+
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 28px;
+  height: 28px;
+
+  margin-left: -14px;
+  margin-top: -14px;
+
+  border-radius: 50%;
+
+  background: var(--hb-red);
+  color: #fff;
+
+  box-shadow:
+    0 4px 12px rgba(244, 54, 76, 0.35);
+}
+
+.hb-how-step {
+  flex: 1;
+
+  padding:
+    clamp(1.25rem, 2.5vw, 1.75rem)
+    clamp(1rem, 2vw, 1.35rem);
+
+  text-align: center;
+}
+
+.hb-how-step-num {
+  display: block;
+
+  margin-bottom: 0.35rem;
+
+  font-size: clamp(2rem, 3vw, 2.75rem);
+
+  font-weight: 800;
+  line-height: 1;
+
+  color: rgba(244, 54, 76, 0.2);
+
+  letter-spacing: -0.03em;
+}
+
+.hb-how-step-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 2.5rem;
+  height: 2.5rem;
+
+  margin-bottom: 0.65rem;
+
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.hb-how-step-title {
+  margin: 0 0 0.5rem;
+
+  font-size: 0.95rem;
+
+  font-weight: 800;
+
+  color: var(--hb-navy);
+}
+
+.hb-how-step-text {
+  margin: 0;
+
+  font-size: 0.8rem;
+  line-height: 1.5;
+
+  color: rgba(27, 39, 72, 0.72);
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   16. FEATURES
+   ========================================================= */
+
+.hb-features-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 1rem;
+}
+
+.hb-feature-card {
+  width: 100%;
+
+  padding: 5rem 2rem;
+
+  box-sizing: border-box;
+
+  background: #071026;
+
+  border-radius: 16px;
+
+  border-color: 3px solid rgba(255, 255, 255, 0.774);
+
+  border: 1px solid rgba(76, 215, 246, 0.2);
+}
+
+.hb-feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 2.5rem;
+  height: 2.5rem;
+
+  margin-bottom: 0.85rem;
+
+  border-radius: 10px;
+
+  background: #122131;
+
+  border: 1px solid rgba(76, 215, 246, 0.2);
+
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.hb-feature-title {
+  margin: 0 0 0.45rem;
+
+  font-size: 0.95rem;
+
+  font-weight: 800;
+
+  color: var(--hb-navy);
+
+  line-height: 1.25;
+}
+
+.hb-feature-text {
+  margin: 0;
+
+  font-size: 0.8rem;
+  line-height: 1.55;
+
+  color: white;
+
+  font-weight: 500;
+}
+
+.hb-feature-text2 {
+  margin: 0;
+
+  font-size: 0.8rem;
+  line-height: 1.55;
+
+  color: #4CD7F6;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   17. MISIÓN / VISIÓN
+   ========================================================= */
+
+.mv-section {
+  background-color: #06111e;
+
+  padding: 80px 24px;
+
+  color: #ffffff;
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+}
+
+.mv-container {
+  max-width: 1100px;
+
+  margin: 0 auto;
+}
+
+.mv-quote-title {
+  text-align: center;
+
+  font-size: 2.25rem;
+
+  font-weight: 800;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.5px;
+
+  margin-bottom: 56px;
+
+  color: #ffffff;
+}
+
+.mv-highlight {
+  color: #38bdf8;
+}
+
+.mv-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 28px;
+}
+
+.mv-card {
+  background:
+    linear-gradient(
+      180deg,
+      #0d1b2a 0%,
+      #091320 100%
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 18px;
+
+  padding: 36px 32px;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.35);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.mv-card:hover {
+  transform: translateY(-3px);
+
+  border-color:
+    rgba(56, 189, 248, 0.3);
+}
+
+.mv-icon-box {
+  width: 44px;
+  height: 44px;
+
+  background-color:
+    rgba(56, 189, 248, 0.08);
+
+  border:
+    1px solid rgba(56, 189, 248, 0.25);
+
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #38bdf8;
+
+  margin-bottom: 24px;
+}
+
+.mv-card-title {
+  font-size: 1.35rem;
+
+  font-weight: 700;
+
+  color: #ffffff;
+
+  margin-bottom: 14px;
+
+  line-height: 1.2;
+}
+
+.mv-card-text {
+  font-size: 0.92rem;
+
+  line-height: 1.65;
+
+  color: #94a3b8;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   18. PARTNER
+   ========================================================= */
+
+.hb-partner-section {
+  width: 100%;
+
+  padding:
+    clamp(4rem, 7vw, 6rem)
+    clamp(1rem, 5vw, 4rem);
+
+  background: #06111e;
+
+  box-sizing: border-box;
+}
+
+.hb-partner-container {
+  width: 100%;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+.hb-partner-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(480px, 1fr);
+
+  align-items: center;
+
+  gap: clamp(3rem, 6vw, 6rem);
+}
+
+.hb-partner-info {
+  width: 100%;
+
+  max-width: 520px;
+}
+
+.hb-partner-main-title {
+  margin: 0 0 1.25rem;
+
+  font-size: clamp(2rem, 4vw, 3.5rem);
+
+  font-weight: 800;
+
+  line-height: 1.08;
+
+  letter-spacing: -0.03em;
+
+  color: #ffffff;
+}
+
+.hb-partner-subtitle {
+  margin: 0 0 2.5rem;
+
+  max-width: 500px;
+
+  font-size: 1rem;
+
+  line-height: 1.7;
+
+  color: #94a3b8;
+}
+
+
+/* =========================================================
+   19. CONTACTOS
+   ========================================================= */
+
+.hb-contact-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+}
+
+.hb-contact-card {
+  display: flex;
+  align-items: center;
+
+  gap: 1rem;
+
+  padding: 1rem 1.1rem;
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.hb-contact-card:hover {
+  transform: translateX(4px);
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border-color:
+    rgba(76, 215, 246, 0.25);
+}
+
+.hb-contact-icon {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: rgba(76, 215, 246, 0.1);
+
+  border: 1px solid rgba(76, 215, 246, 0.2);
+
+  color: #4cd7f6;
+}
+
+.hb-contact-details {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.2rem;
+}
+
+.hb-contact-name {
+  font-size: 0.95rem;
+
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+.hb-contact-desc {
+  font-size: 0.82rem;
+
+  color: #94a3b8;
+}
+
+
+/* =========================================================
+   20. FORMULARIO PARTNER
+   ========================================================= */
+
+.hb-partner-card {
+  width: 100%;
+
+  padding: clamp(1.5rem, 3vw, 2rem);
+
+  box-sizing: border-box;
+
+  border-radius: 20px;
+
+  background: #0d1b2a;
+
+  border: 1px solid rgba(76, 215, 246, 0.2);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.hb-partner-form-title {
+  margin: 0 0 1.5rem;
+
+  font-size: 1.25rem;
+
+  font-weight: 800;
+
+  color: #ffffff;
+}
+
+.hb-rocket-icon {
+  font-size: 1.15rem;
+}
+
+.hb-partner-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1rem;
+}
+
+.hb-form-row {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 1rem;
+}
+
+.hb-field {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.4rem;
+}
+
+.hb-field label {
+  font-size: 0.82rem;
+
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+.hb-required {
+  color: #f4364c;
+}
+
+
+/* =========================================================
+   21. INPUTS
+   ========================================================= */
+
+.hb-field input,
+.hb-field select,
+.hb-field textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 0.75rem 0.9rem;
+
+  border-radius: 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  background: #091320;
+
+  font-family: inherit;
+
+  font-size: 0.88rem;
+
+  color: #ffffff;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.hb-field input::placeholder,
+.hb-field textarea::placeholder {
+  color: #9ca3af;
+}
+
+.hb-field input:focus,
+.hb-field select:focus,
+.hb-field textarea:focus {
+  outline: none;
+
+  border-color: #4760ff;
+
+  box-shadow:
+    0 0 0 3px rgba(71, 96, 255, 0.12);
+}
+
+.hb-field input:disabled,
+.hb-field select:disabled,
+.hb-field textarea:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+}
+
+.hb-field--textarea {
+  position: relative;
+}
+
+.hb-field textarea {
+  resize: vertical;
+
+  min-height: 90px;
+}
+
+.hb-char-count {
+  align-self: flex-end;
+
+  margin-top: -0.15rem;
+
+  font-size: 0.72rem;
+
+  font-weight: 600;
+
+  color: #9ca3af;
+}
+
+
+/* =========================================================
+   22. FORM ERROR
+   ========================================================= */
+
+.hb-form-error {
+  margin: 0;
+
+  padding: 0.65rem 0.8rem;
+
+  border-radius: 10px;
+
+  background: rgba(239, 68, 68, 0.16);
+  border: 1px solid #ef4444;
+  
+  font-size: 0.82rem;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   23. BOTÓN SUBMIT
+   ========================================================= */
+
+.hb-btn-submit {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.6rem;
+
+  margin-top: 0.35rem;
+
+  padding: 0.9rem 1.25rem;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #00d4ff
+    );
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 0.95rem;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.hb-btn-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(0, 212, 255, 0.3);
+}
+
+.hb-btn-submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.hb-btn-submit:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+.hb-btn-icon {
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   24. SUCCESS
+   ========================================================= */
+
+.hb-partner-success {
+  padding: 1rem 0;
+
+  text-align: center;
+}
+
+.hb-partner-success-title {
+  margin: 0 0 0.6rem;
+
+  font-size: 1.15rem;
+
+  font-weight: 800;
+
+  color: #071026;
+}
+
+.hb-partner-success-desc {
+  margin: 0 0 1.5rem;
+
+  font-size: 0.88rem;
+
+  line-height: 1.55;
+
+  color: #64748b;
+}
+
+.hb-partner-success .hb-btn-submit {
+  margin-top: 0;
+}
+
+
+/* =========================================================
+   25. FAQ
+   ========================================================= */
+
+.hb-faq-list {
+  border-top: 1px solid rgba(244, 54, 76, 0.2);
+}
+
+.hb-faq-item {
+  border-bottom: 1px solid rgba(244, 54, 76, 0.2);
+}
+
+.hb-faq-item-head {
+  margin: 0;
+}
+
+.hb-faq-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  width: 100%;
+
+  padding: 1.1rem 0;
+
+  border: none;
+
+  background: transparent;
+
+  text-align: left;
+
+  font-family: inherit;
+
+  font-size: 0.95rem;
+
+  font-weight: 800;
+
+  color: var(--hb-navy);
+
+  cursor: pointer;
+}
+
+.hb-faq-trigger span {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.hb-faq-chevron {
+  flex-shrink: 0;
+
+  color: var(--hb-red);
+
+  transition: transform 0.2s ease;
+}
+
+.hb-faq-chevron--open {
+  transform: rotate(180deg);
+}
+
+.hb-faq-panel {
+  overflow: hidden;
+}
+
+.hb-faq-panel p {
+  margin: 0 0 1.1rem;
+
+  padding-right: 2rem;
+
+  font-size: 0.88rem;
+
+  line-height: 1.55;
+
+  color: rgba(27, 39, 72, 0.78);
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   26. DESCARGA APP
+   ========================================================= */
+
+.hb-download {
+  text-align: center;
+}
+
+.hb-download-title {
+  margin-bottom: 0.85rem;
+}
+
+.hb-download-lead {
+  margin: 0 auto 1.75rem;
+
+  max-width: 36rem;
+
+  font-size: 0.95rem;
+
+  line-height: 1.55;
+
+  color: rgba(27, 39, 72, 0.82);
+
+  font-weight: 500;
+}
+
+.hb-store-row {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 0.85rem;
+}
+
+.hb-store-badge {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.65rem;
+
+  min-width: 200px;
+
+  padding: 0.55rem 1rem 0.55rem 0.75rem;
+
+  border-radius: 12px;
+
+  background: #111;
+
+  color: #fff;
+
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+}
+
+.hb-store-badge--image {
+  min-width: 0;
+
+  padding: 0;
+
+  background: transparent;
+
+  border-radius: 12px;
+
+  line-height: 0;
+}
+
+.hb-store-badge--image img {
+  display: block;
+
+  width: auto;
+
+  height: 52px;
+
+  max-width: min(220px, 42vw);
+}
+
+.hb-store-badge:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.hb-store-badge--image:hover {
+  box-shadow:
+    0 8px 20px rgba(17, 24, 39, 0.18);
+}
+
+.hb-store-badge-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 1.75rem;
+  height: 1.75rem;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+}
+
+.hb-store-badge-icon--apple {
+  font-size: 1.35rem;
+}
+
+.hb-store-badge-text {
+  display: flex;
+
+  flex-direction: column;
+  align-items: flex-start;
+
+  line-height: 1.15;
+}
+
+.hb-store-badge-text small {
+  font-size: 0.62rem;
+
+  font-weight: 500;
+
+  opacity: 0.9;
+}
+
+.hb-store-badge-text strong {
+  font-size: 0.95rem;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   27. FOOTER
+   ========================================================= */
+
+.hb-footer {
+  width: auto;
+
+  background:(0, 212, 255, 0.3);
+
+  color: #ffffff;
+
+  padding: 24px 48px;
+}
+
+.hb-footer-content {
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr auto 1fr;
+
+  align-items: center;
+
+  gap: 32px;
+}
+
+.hb-footer-brand {
+  display: flex;
+
+  justify-content: flex-start;
+}
+
+.hb-footer-copyright {
+  text-align: center;
+}
+
+.hb-footer-copyright p {
+  margin: 0;
+
+  font-size: 13px;
+
+  color: #9ca3af;
+}
+
+.hb-footer-social {
+  display: flex;
+
+  justify-content: flex-end;
+  align-items: center;
+
+  gap: 20px;
+}
+
+.hb-footer-social-link {
+  color: #d1d5db;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.hb-footer-social-link:hover {
+  color: #ffffff;
+
+  transform: translateY(-1px);
+}
+/* =========================================================
+   BOTÓN FLOTANTE WHATSAPP
+   ========================================================= */
+
+.whatsapp-float {
+  position: fixed;
+
+  right: 24px;
+  bottom: 24px;
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #25d366;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+
+  z-index: 9999;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.08);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-icon {
+  width: 30px;
+  height: 30px;
+}
+
+
+/* =========================================================
+   OVERLAY
+   ========================================================= */
+
+.whatsapp-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 10000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
+
+  background: rgba(3, 10, 20, 0.7);
+
+  backdrop-filter: blur(4px);
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.whatsapp-modal {
+  position: relative;
+
+  width: 100%;
+  max-width: 420px;
+
+  padding: 2rem;
+
+  box-sizing: border-box;
+
+  border-radius: 20px;
+
+  background: #0d1b2a;
+
+  border: 1px solid rgba(76, 215, 246, 0.2);
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   CERRAR
+   ========================================================= */
+
+.whatsapp-modal-close {
+  position: absolute;
+
+  top: 12px;
+  right: 16px;
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #94a3b8;
+
+  font-size: 1.5rem;
+
+  cursor: pointer;
+}
+
+.whatsapp-modal-close:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   ICONO
+   ========================================================= */
+
+.whatsapp-modal-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 1rem;
+
+  border-radius: 14px;
+
+  background: rgba(37, 211, 102, 0.12);
+
+  color: #25d366;
+}
+
+.whatsapp-modal-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+
+/* =========================================================
+   TEXTO
+   ========================================================= */
+
+.whatsapp-modal h2 {
+  margin: 0 0 0.5rem;
+
+  font-size: 1.35rem;
+  font-weight: 800;
+
+  color: #ffffff;
+}
+
+.whatsapp-modal-description {
+  margin: 0 0 1.5rem;
+
+  font-size: 0.9rem;
+  line-height: 1.5;
+
+  color: #94a3b8;
+}
+
+
+/* =========================================================
+   CAMPOS
+   ========================================================= */
+
+.whatsapp-field {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.4rem;
+
+  margin-bottom: 1rem;
+}
+
+.whatsapp-field label {
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+.whatsapp-field label span {
+  color: #f4364c;
+}
+
+.whatsapp-field input {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 0.8rem 0.9rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 10px;
+
+  background: #091320;
+
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 0.88rem;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.whatsapp-field input::placeholder {
+  color: #64748b;
+}
+
+.whatsapp-field input:focus {
+  border-color: #25d366;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 211, 102, 0.12);
+}
+
+
+/* =========================================================
+   BOTÓN WHATSAPP
+   ========================================================= */
+
+.whatsapp-submit {
+  width: 100%;
+
+  margin-top: 0.5rem;
+
+  padding: 0.9rem 1rem;
+
+  border: none;
+  border-radius: 999px;
+
+  background: #25d366;
+
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.whatsapp-submit:hover {
+  background: #20bd5a;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(37, 211, 102, 0.25);
+}
+
+.whatsapp-submit:active {
+  transform: translateY(0);
+}
+
+
+
+
+/* =========================================================
+   29. RESPONSIVE - 960px
+   ========================================================= */
+
+@media (max-width: 960px) {
+
+  .hb-how-strip {
+    flex-direction: column;
+  }
+
+  .hb-how-step-wrap:not(:first-child) {
+    border-left: none;
+
+    border-top:
+      1px solid rgba(244, 54, 76, 0.18);
+  }
+
+  .hb-how-arrow {
+    left: 50%;
+    top: 0;
+
+    margin-left: -14px;
+    margin-top: -14px;
+
+    transform: rotate(90deg);
+  }
+
+  .hb-features-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .mv-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mv-quote-title {
+    font-size: 1.65rem;
+
+    margin-bottom: 40px;
+  }
+
+  .mv-card {
+    padding: 28px 24px;
+  }
+}
+
+
+/* =========================================================
+   29. RESPONSIVE - 900px
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  /* ---------- HERO ---------- */
+
+  .hb-hero {
+    min-height: auto;
+
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    padding-inline: 1rem;
+
+    text-align: center;
+  }
+
+  .hb-hero2 {
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+  }
+
+  .hb-hero-copy {
+    max-width: 700px;
+  }
+
+  .hb-hero-gallery {
+    order: 2;
+
+    max-width: 700px;
+
+    margin: 0 auto;
+  }
+
+  .hb-hero-visual {
+    order: 0;
+
+    justify-self: center;
+
+    width: 100%;
+  }
+
+  .hb-phone-wrap {
+    max-width: 420px;
+  }
+
+  .hb-title {
+    font-size:
+      clamp(2rem, 8vw, 3rem);
+  }
+
+  .hb-sub {
+    max-width: 600px;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hb-cta-row {
+    justify-content: center;
+  }
+
+  .hb-stats {
+    justify-content: center;
+  }
+
+  .hb-toast-tr {
+    right: 0;
+  }
+
+  .hb-toast-bl {
+    left: 0;
+  }
+
+
+  /* ---------- TECNOLOGÍA ---------- */
+
+  .tech-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .tech-main-grid {
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+  }
+
+  .tech-info {
+    max-width: 100%;
+
+    text-align: center;
+  }
+
+  .tech-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tech-badges {
+    justify-content: center;
+  }
+
+  .tech-carousel {
+    max-width: 700px;
+
+    margin: 0 auto;
+  }
+
+  .carousel-window {
+    height: 380px;
+  }
+
+  .tech-clients-section {
+    margin-top: 4rem;
+  }
+
+
+  /* ---------- PARTNER ---------- */
+
+  .hb-partner-section {
+    padding:
+      4rem
+      1.5rem;
+  }
+
+  .hb-partner-grid {
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+  }
+
+  .hb-partner-info {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    text-align: center;
+  }
+
+  .hb-partner-main-title {
+    font-size:
+      clamp(2rem, 6vw, 3rem);
+  }
+
+  .hb-partner-subtitle {
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+  .hb-contact-list {
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    text-align: left;
+  }
+
+  .hb-partner-card {
+    width: 100%;
+
+    max-width: 700px;
+
+    margin: 0 auto;
+  }
+
+
+  /* ---------- FOOTER ---------- */
+
+  .hb-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hb-footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+
+/* =========================================================
+   30. RESPONSIVE - 768px
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .mv-grid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .mv-quote-title {
+    font-size: 1.65rem;
+
+    margin-bottom: 40px;
+  }
+
+  .mv-card {
+    padding: 28px 24px;
+  }
+}
+
+
+/* =========================================================
+   31. RESPONSIVE - 560px
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+  /* ---------- GENERAL ---------- */
+
+  .hb-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hb-section-title {
+    text-align: center;
+  }
+
+  .hb-section-eyebrow {
+    text-align: center;
+  }
+
+
+  /* ---------- HERO ---------- */
+
+  .hb-phone-wrap {
+    max-width: 320px;
+  }
+
+  .hb-title {
+    font-size: 2rem;
+  }
+
+
+  /* ---------- TECNOLOGÍA ---------- */
+
+  .tech-section {
+    padding: 3.5rem 1rem;
+  }
+
+  .tech-title {
+    font-size: 2rem;
+  }
+
+  .tech-desc {
+    font-size: 0.9rem;
+  }
+
+  .tech-highlight {
+    font-size: 0.9rem;
+  }
+
+  .tech-badge {
+    font-size: 0.72rem;
+  }
+
+  .carousel-window {
+    height: 280px;
+
+    border-radius: 18px;
+  }
+
+  .clients-track {
+    height: 75px;
+  }
+
+  .client-card {
+    padding: 0.5rem;
+  }
+
+  .client-card img {
+    max-width: 110px;
+    max-height: 45px;
+  }
+
+  .clients-title {
+    padding-inline: 0.5rem;
+  }
+
+
+  /* ---------- PARTNER ---------- */
+
+  .hb-partner-section {
+    padding:
+      3.5rem
+      1rem;
+  }
+
+  .hb-partner-main-title {
+    font-size: 2rem;
+  }
+
+  .hb-partner-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .hb-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .hb-partner-card {
+    padding: 1.25rem;
+
+    border-radius: 16px;
+  }
+
+  .hb-contact-card {
+    padding: 0.85rem;
+  }
+
+
+  /* ---------- FAQ ---------- */
+
+  .hb-faq-trigger {
+    font-size: 0.88rem;
+  }
+
+  .hb-faq-panel p {
+    padding-right: 0;
+  }
+}
+
+
+/* =========================================================
+   32. RESPONSIVE - DESKTOP
+   ========================================================= */
+
+@media (min-width: 901px) {
+
+  .hb-hero {
+    min-height: min(82dvh, 920px);
+
+    padding-block:
+      clamp(0.5rem, 3vh, 2.5rem);
+  }
+
+  .hb-sub {
+    max-width:
+      clamp(28rem, 38vw, 42rem);
+  }
+}
+
+/* =========================================================
+   WHATSAPP - MÓVIL
+   ========================================================= */
+
+@media (max-width: 560px) {
+  .whatsapp-float {
+    right: 16px;
+    bottom: 16px;
+
+    width: 52px;
+    height: 52px;
+  }
+
+  .whatsapp-icon {
+    width: 27px;
+    height: 27px;
+  }
+
+  .whatsapp-modal {
+    padding: 1.5rem;
+
+    border-radius: 16px;
+  }
+}

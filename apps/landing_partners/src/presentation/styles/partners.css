@@ -1,0 +1,162 @@
+.wp-shell {
+  min-height: 100vh;
+  padding: 1.25rem clamp(1rem, 4vw, 2rem);
+  background: var(--wp-bg);
+}
+
+.wp-top {
+  max-width: 960px;
+  margin: 0 auto 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.wp-top-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.wp-link {
+  font-weight: 600;
+  color: var(--wp-red);
+  text-decoration: none;
+}
+
+.wp-link:hover {
+  text-decoration: underline;
+}
+
+button.wp-btn-text {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.wp-main {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.wp-main h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.75rem;
+}
+
+.wp-lead {
+  margin: 0 0 1.5rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.wp-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 30px rgba(27, 39, 72, 0.06);
+}
+
+.wp-card h2 {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+}
+
+.wp-error {
+  color: #b00020;
+}
+
+.wp-btn {
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 2px solid var(--wp-navy);
+  background: #fff;
+  color: var(--wp-navy);
+}
+
+.wp-btn:hover {
+  background: var(--wp-navy);
+  color: #fff;
+}
+
+.wp-home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wp-home-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(27, 39, 72, 0.08);
+}
+
+.wp-home-card h1 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.wp-home-card p {
+  margin: 0 0 1.5rem;
+  opacity: 0.88;
+}
+
+.wp-home-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.wp-btn-primary {
+  background: var(--wp-red);
+  border-color: var(--wp-red);
+  color: #fff;
+  text-decoration: none;
+}
+
+.wp-btn-primary:hover {
+  filter: brightness(0.95);
+  background: var(--wp-red);
+  color: #fff;
+}
+
+.wp-btn-ghost {
+  text-decoration: none;
+  border-color: transparent;
+  background: transparent;
+  color: var(--wp-red);
+}
+
+.wp-btn-ghost:hover {
+  background: #ffecee;
+  color: var(--wp-red);
+}
+
+code {
+  font-size: 0.9em;
+  background: rgba(27, 39, 72, 0.06);
+  padding: 0.1em 0.35em;
+  border-radius: 6px;
+}
+
+.pd-panel-loading {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font);
+  color: var(--wp-navy);
+  font-weight: 600;
+}

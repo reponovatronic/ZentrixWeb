@@ -1,0 +1,250 @@
+.hb-drp-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.hb-drp-label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--hb-navy, #1b2748);
+}
+
+.hb-drp-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  border-radius: 12px;
+  border: 1px solid rgba(27, 39, 72, 0.14);
+  background: #fff;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--hb-navy, #1b2748);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.hb-drp-trigger:hover {
+  border-color: rgba(244, 54, 76, 0.35);
+}
+
+.hb-drp-trigger:focus-visible {
+  outline: none;
+  border-color: rgba(244, 54, 76, 0.45);
+  box-shadow: 0 0 0 3px rgba(244, 54, 76, 0.12);
+}
+
+.hb-drp-trigger-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.hb-drp-trigger-icon {
+  flex-shrink: 0;
+  color: rgba(27, 39, 72, 0.45);
+}
+
+.hb-drp-panel {
+  position: absolute;
+  z-index: 1100;
+  top: calc(100% + 0.35rem);
+  left: 0;
+  right: 0;
+  min-width: min(100%, 340px);
+  padding: 0.85rem;
+  border-radius: 14px;
+  border: 1px solid rgba(27, 39, 72, 0.1);
+  background: #fff;
+  box-shadow: 0 16px 48px rgba(27, 39, 72, 0.14);
+}
+
+.hb-drp-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.hb-drp-preset {
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(27, 39, 72, 0.12);
+  background: #fff;
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(27, 39, 72, 0.75);
+  cursor: pointer;
+}
+
+.hb-drp-preset:hover {
+  border-color: rgba(244, 54, 76, 0.3);
+}
+
+.hb-drp-preset--on {
+  border-color: rgba(244, 54, 76, 0.45);
+  background: rgba(244, 54, 76, 0.08);
+  color: var(--hb-red, #f4364c);
+}
+
+.hb-drp-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+  margin-bottom: 0.75rem;
+}
+
+.hb-drp-field span {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(27, 39, 72, 0.55);
+}
+
+.hb-drp-field input[type="date"] {
+  width: 100%;
+  padding: 0.45rem 0.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(27, 39, 72, 0.14);
+  font-family: inherit;
+  font-size: 0.82rem;
+}
+
+.hb-drp-cal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.hb-drp-cal-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--hb-navy, #1b2748);
+  text-transform: capitalize;
+}
+
+.hb-drp-cal-nav {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.hb-drp-cal-nav button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(27, 39, 72, 0.06);
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--hb-navy, #1b2748);
+}
+
+.hb-drp-cal-nav button:hover {
+  background: rgba(244, 54, 76, 0.1);
+}
+
+.hb-drp-cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.hb-drp-cal-dow {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-align: center;
+  color: rgba(27, 39, 72, 0.45);
+  padding: 0.2rem 0;
+}
+
+.hb-drp-cal-day {
+  aspect-ratio: 1;
+  min-height: 32px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--hb-navy, #1b2748);
+  cursor: pointer;
+}
+
+.hb-drp-cal-day:hover:not(:disabled) {
+  background: rgba(244, 54, 76, 0.1);
+}
+
+.hb-drp-cal-day--muted {
+  color: rgba(27, 39, 72, 0.28);
+}
+
+.hb-drp-cal-day--in-range {
+  background: rgba(244, 54, 76, 0.12);
+  border-radius: 0;
+}
+
+.hb-drp-cal-day--edge {
+  background: var(--hb-red, #f4364c);
+  color: #fff;
+}
+
+.hb-drp-cal-day:disabled {
+  cursor: default;
+  opacity: 0.35;
+}
+
+.hb-drp-hint {
+  margin: 0.5rem 0 0;
+  font-size: 0.72rem;
+  color: rgba(27, 39, 72, 0.5);
+  font-weight: 500;
+}
+
+.hb-drp-apply {
+  margin-top: 0.65rem;
+  width: 100%;
+  padding: 0.55rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--hb-red, #f4364c);
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.hb-drp-apply:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.hb-drp-wrap--embedded {
+  position: static;
+}
+
+.hb-drp-panel--embedded {
+  position: static;
+  margin-top: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  min-width: 0;
+}
+
+/* Dentro del popover «Filtro» no duplicar chips de periodo */
+.pd-metrics-filter-custom--picker .hb-drp-panel--embedded .hb-drp-presets {
+  display: none;
+}
+
+.hb-drp-panel--embedded .hb-drp-cal-day {
+  min-height: 1.75rem;
+  font-size: 0.75rem;
+}

@@ -1,0 +1,142 @@
+.hb-download-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 1rem;
+  background: rgba(27, 39, 72, 0.45);
+  backdrop-filter: blur(4px);
+}
+
+.hb-download-modal-card {
+  width: min(100%, 440px);
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 24px 64px rgba(27, 39, 72, 0.2);
+}
+
+.hb-download-modal-head {
+  position: relative;
+  padding: 1.25rem 3rem 1rem 1.35rem;
+  border-bottom: 1px solid rgba(27, 39, 72, 0.08);
+}
+
+.hb-download-modal-head h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--hb-navy, #1b2748);
+}
+
+.hb-download-modal-sub {
+  margin: 0;
+  font-size: 0.84rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: rgba(27, 39, 72, 0.55);
+}
+
+.hb-download-modal-close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: rgba(27, 39, 72, 0.5);
+  cursor: pointer;
+}
+
+.hb-download-modal-close:hover {
+  background: rgba(27, 39, 72, 0.06);
+  color: var(--hb-navy, #1b2748);
+}
+
+.hb-download-modal-body {
+  padding: 1.15rem 1.35rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.hb-download-modal-section-title {
+  margin: 0 0 0.55rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--hb-navy, #1b2748);
+}
+
+.hb-download-modal-checks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.hb-download-modal-check {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: rgba(27, 39, 72, 0.82);
+  cursor: pointer;
+}
+
+.hb-download-modal-check input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--hb-red, #f4364c);
+  cursor: pointer;
+}
+
+.hb-download-modal-foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  padding: 0 1.35rem 1.35rem;
+}
+
+.hb-download-modal-btn {
+  padding: 0.65rem 1.35rem;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.hb-download-modal-btn--ghost {
+  background: #fff;
+  border-color: var(--hb-red, #f4364c);
+  color: var(--hb-red, #f4364c);
+}
+
+.hb-download-modal-btn--ghost:hover {
+  background: rgba(244, 54, 76, 0.06);
+}
+
+.hb-download-modal-btn--solid {
+  background: var(--hb-red, #f4364c);
+  border-color: var(--hb-red, #f4364c);
+  color: #fff;
+}
+
+.hb-download-modal-btn--solid:hover {
+  background: var(--hb-red-dark, #d92d42);
+  border-color: var(--hb-red-dark, #d92d42);
+}
+
+/* Panel del date picker dentro del modal */
+.hb-download-modal-body .hb-drp-panel {
+  position: static;
+  box-shadow: none;
+  border: 1px solid rgba(27, 39, 72, 0.08);
+  margin-top: 0.35rem;
+}

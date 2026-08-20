@@ -1,0 +1,251 @@
+.pp-order-modal-root {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.pp-order-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  border: none;
+  background: rgba(17, 24, 39, 0.45);
+  cursor: pointer;
+}
+
+.pp-order-modal-card {
+  position: relative;
+  z-index: 1;
+  width: min(520px, 100%);
+  max-height: min(90vh, 720px);
+  overflow: auto;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18);
+  padding: 1.25rem 1.35rem 1.5rem;
+}
+
+.pp-order-modal-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.pp-order-modal-head h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.pp-order-modal-sub {
+  margin: 0.35rem 0 0;
+  font-size: 0.8125rem;
+  color: rgba(55, 65, 81, 0.72);
+}
+
+.pp-order-modal-close {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 10px;
+  background: #f3f4f6;
+  color: #374151;
+  cursor: pointer;
+}
+
+.pp-order-modal-msg {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  color: rgba(55, 65, 81, 0.8);
+}
+
+.pp-order-modal-msg--error {
+  color: #b91c1c;
+}
+
+.pp-order-modal-steps {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: rgba(55, 65, 81, 0.55);
+}
+
+.pp-order-modal-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  flex: 1;
+  text-align: center;
+}
+
+.pp-order-modal-step-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #e5e7eb;
+}
+
+.pp-order-modal-step--done .pp-order-modal-step-dot {
+  background: #22a06b;
+}
+
+.pp-order-modal-step--active {
+  color: #e94e51;
+}
+
+.pp-order-modal-step--active .pp-order-modal-step-dot {
+  background: #e94e51;
+  box-shadow: 0 0 0 4px rgba(233, 78, 81, 0.2);
+}
+
+.pp-order-modal-section h3 {
+  margin: 0 0 0.65rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.pp-order-modal-section + .pp-order-modal-section {
+  margin-top: 1rem;
+}
+
+.pp-order-modal-muted {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: rgba(55, 65, 81, 0.65);
+}
+
+.pp-order-modal-products {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pp-order-modal-product {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.pp-order-modal-product-img {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.pp-order-modal-product-img--ph {
+  background: #ffe8ec;
+  display: block;
+}
+
+.pp-order-modal-product-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.pp-order-modal-product-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.pp-order-modal-pill {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.pp-order-modal-summary {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.pp-order-modal-summary div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.875rem;
+}
+
+.pp-order-modal-summary dt {
+  margin: 0;
+  color: rgba(55, 65, 81, 0.72);
+}
+
+.pp-order-modal-summary dd {
+  margin: 0;
+  font-weight: 600;
+  color: #111827;
+}
+
+.pp-order-modal-savings {
+  color: #008236 !important;
+}
+
+.pp-order-modal-total {
+  color: #e94e51 !important;
+  font-size: 1rem !important;
+}
+
+.pp-order-modal-pickup-time {
+  margin: 0 0 0.25rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.pp-order-modal-actions {
+  display: flex;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+.pp-order-modal-btn {
+  flex: 1;
+  padding: 0.65rem 1rem;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pp-order-modal-btn--ghost {
+  border: 1px solid #e94e51;
+  background: #fff;
+  color: #e94e51;
+}
+
+.pp-order-modal-btn--primary {
+  border: none;
+  background: #e94e51;
+  color: #fff;
+}

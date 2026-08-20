@@ -1,0 +1,71 @@
+/* Modal sesión expirada / 401 */
+
+.ps-session-modal-root {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  font-family: "Montserrat", "DM Sans", system-ui, sans-serif;
+}
+
+.ps-session-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(27, 39, 72, 0.55);
+  backdrop-filter: blur(4px);
+}
+
+.ps-session-modal-card {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 400px);
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+  background: #fff;
+  box-shadow: 0 18px 48px rgba(27, 39, 72, 0.2);
+}
+
+.ps-session-modal-card h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1b2748;
+  letter-spacing: -0.02em;
+}
+
+.ps-session-modal-card p {
+  margin: 0 0 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #3d4a63;
+}
+
+.ps-session-modal-actions {
+  display: flex;
+  justify-content: stretch;
+}
+
+.ps-session-modal-actions button {
+  width: 100%;
+  border: none;
+  border-radius: 999px;
+  padding: 0.85rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  background: #f4364c;
+  color: #fff;
+}
+
+.ps-session-modal-actions button:focus-visible {
+  outline: 2px solid #1b2748;
+  outline-offset: 2px;
+}
+
+.ps-session-modal-actions button:hover {
+  filter: brightness(1.03);
+}

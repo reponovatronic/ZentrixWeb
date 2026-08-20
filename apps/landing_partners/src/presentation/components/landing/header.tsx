@@ -1,0 +1,69 @@
+import { Link, useLocation } from "react-router-dom";
+import {
+  LANDING_HEADER_NAV,
+} from "@/presentation/content/landing_nav";
+import { scrollToLandingHash } from "@/presentation/utils/landing_scroll";
+
+function NavAnchor({ href, label }: { href: string; label: string }) {
+  const location = useLocation();
+  const isHash = href.startsWith("#");
+
+  if (!isHash) {
+    return <a href={href}>{label}</a>;
+  }
+
+  return (
+    <a
+      href={href}
+      onClick={(e) => {
+        if (location.pathname !== "/") return;
+
+        e.preventDefault();
+        scrollToLandingHash(href);
+      }}
+    >
+      {label}
+    </a>
+  );
+}
+
+export function Header() {
+  return (
+    <header className="hb-header">
+      <div className="hb-header-inner">
+
+        <Link
+          to="/"
+          className="hb-logo-row"
+          aria-label="Zentrix inicio"
+        >
+          <img
+            src="/logo_landing.svg"
+            alt=""
+            width={76}
+            height={32}
+          />
+
+          <span className="hb-logo-text">ZENTRIX</span>
+        </Link>
+
+        <nav className="hb-nav" aria-label="Principal">
+          {LANDING_HEADER_NAV.map((item) => (
+            <NavAnchor
+              key={item.href}
+              href={item.href}
+              label={item.label}
+            />
+          ))}
+        </nav>
+
+        <div className="hb-header-actions hb-btn hb-btn-solid">
+          <Link to="/partners">
+            Log in
+          </Link>
+        </div>
+
+      </div>
+    </header>
+  );
+}

@@ -1,0 +1,192 @@
+/* Modal detalle partner (admin directorio) — alineado con pp-order-modal */
+
+.pp-dir-detail-root {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.pp-dir-detail-backdrop {
+  position: absolute;
+  inset: 0;
+  border: none;
+  background: rgba(17, 24, 39, 0.45);
+  cursor: pointer;
+}
+
+.pp-dir-detail-card {
+  position: relative;
+  z-index: 1;
+  width: min(480px, 100%);
+  max-height: min(90vh, 640px);
+  overflow: auto;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18);
+  padding: 1.25rem 1.35rem 1.35rem;
+}
+
+.pp-dir-detail-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.pp-dir-detail-head-main {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.pp-dir-detail-avatar {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.pp-dir-detail-head h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--pd-navy, #1b2748);
+  line-height: 1.25;
+}
+
+.pp-dir-detail-sub {
+  margin: 0.3rem 0 0;
+  font-size: 0.78rem;
+  color: rgba(55, 65, 81, 0.72);
+  word-break: break-word;
+}
+
+.pp-dir-detail-close {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 10px;
+  background: #f3f4f6;
+  color: #374151;
+  cursor: pointer;
+}
+
+.pp-dir-detail-close:hover {
+  background: #e5e7eb;
+}
+
+.pp-dir-detail-status-row {
+  margin-bottom: 1rem;
+}
+
+.pp-dir-detail-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.pp-dir-detail-pill-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.pp-dir-detail-pill--ok {
+  background: rgba(34, 160, 107, 0.12);
+  color: #15803d;
+}
+
+.pp-dir-detail-pill--warn {
+  background: rgba(245, 158, 11, 0.15);
+  color: #b45309;
+}
+
+.pp-dir-detail-pill--muted {
+  background: rgba(27, 39, 72, 0.08);
+  color: rgba(27, 39, 72, 0.5);
+}
+
+.pp-dir-detail-fields {
+  margin: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.pp-dir-detail-field {
+  display: grid;
+  grid-template-columns: minmax(0, 38%) minmax(0, 1fr);
+  gap: 0.5rem 1rem;
+  padding: 0.55rem 0.65rem;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid rgba(27, 39, 72, 0.06);
+}
+
+.pp-dir-detail-field dt {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: rgba(27, 39, 72, 0.5);
+}
+
+.pp-dir-detail-field dd {
+  margin: 0;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--pd-navy, #1b2748);
+  word-break: break-word;
+}
+
+.pp-dir-detail-foot {
+  margin-top: 1.15rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(27, 39, 72, 0.08);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pp-dir-detail-btn {
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--pd-red, #e94e51);
+  color: #fff;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.pp-dir-detail-btn:hover {
+  filter: brightness(0.95);
+}
+
+@media (max-width: 480px) {
+  .pp-dir-detail-field {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+}
