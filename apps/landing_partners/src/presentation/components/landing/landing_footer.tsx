@@ -27,7 +27,7 @@ export function LandingFooter() {
         {/* COPYRIGHT */}
         <div className="hb-footer-copyright">
           <p>
-            © 2026 ZENTRIX TECH E.I.R.L. Lima, Perú. All rights reserved.
+            © 2026 ZENTRIX LATAM E.I.R.L. Lima, Perú. All rights reserved.
           </p>
         </div>
 

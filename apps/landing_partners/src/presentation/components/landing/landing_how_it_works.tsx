@@ -81,7 +81,7 @@ export function LandingHowItWorks() {
             </h2>
 
             <p className="tech-desc">
-              En <strong>ZENTRIX TECH</strong>, no solo escribimos código;
+              En <strong>ZENTRIX LATAM</strong>, no solo escribimos código;
               convertimos las necesidades reales de tu negocio en soluciones
               eficientes y escalables. Nuestro enfoque integral asegura que
               cada pieza tecnológica se alinee con tus objetivos estratégicos.
