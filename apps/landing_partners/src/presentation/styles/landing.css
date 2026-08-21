@@ -120,11 +120,77 @@
 
 .hb-header-actions {
   display: flex;
-  gap: 0.65rem;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  width: auto;
+  min-width: max-content;
+
+  white-space: nowrap;
 }
 
 
+/* =========================================================
+   HEADER - DESKTOP
+   ========================================================= */
+
+.hb-header-inner {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hb-mobile-menu {
+  position: static;
+
+  display: flex;
+  align-items: center;
+
+  width: auto;
+
+  white-space: nowrap;
+}
+
+.hb-nav {
+  position: absolute;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+
+  gap: 1.75rem;
+
+  width: max-content;
+}
+
+.hb-nav a {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.hb-header-actions {
+  display: flex;
+  align-items: center;
+
+  width: max-content;
+
+  margin-left: auto;
+
+  flex-shrink: 0;
+}
+
+.hb-header-actions a {
+  width: max-content;
+  white-space: nowrap;
+}
+
+.hb-menu-toggle {
+  display: none;
+}
 /* =========================================================
    3. BOTONES GENERALES
    ========================================================= */
@@ -882,7 +948,7 @@
 
   margin: clamp(2rem, 6vh, 4rem) auto 0;
 
-  padding-inline: 0;
+  padding: 40px 15px;
 }
 
 .hb-band:first-of-type .hb-hero {
@@ -2309,6 +2375,53 @@
   .mv-card {
     padding: 28px 24px;
   }
+  /* =========================================================
+   HEADER - MENÚ RESPONSIVE
+   ========================================================= */
+
+.hb-mobile-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+.hb-menu-toggle {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 8px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+}
+
+.hb-menu-toggle span {
+  display: block;
+
+  width: 24px;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: var(--hb-navy);
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
 }
 
 
@@ -2491,6 +2604,57 @@
   .hb-footer-brand {
     grid-column: 1 / -1;
   }
+   .hb-mobile-menu {
+    position: static;
+    transform: none;
+
+    width: 100%;
+    max-width: none;
+
+    display: none;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 1rem;
+
+    white-space: normal;
+  }
+
+  .hb-mobile-menu.is-open {
+    display: flex;
+  }
+
+  .hb-menu-toggle {
+    display: flex;
+  }
+
+  .hb-nav {
+    width: 100%;
+    flex-shrink: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 0;
+  }
+
+  .hb-nav a {
+    width: 100%;
+    flex-shrink: 1;
+    white-space: normal;
+  }
+
+  .hb-header-actions {
+    width: 100%;
+    flex-shrink: 1;
+  }
+
+  .hb-header-actions a {
+    width: 100%;
+  }
+
 }
 
 
@@ -2519,10 +2683,10 @@
 
 
 /* =========================================================
-   31. RESPONSIVE - 560px
+   31. RESPONSIVE - 578px
    ========================================================= */
 
-@media (max-width: 560px) {
+@media (max-width: 578px) {
 
   /* ---------- GENERAL ---------- */
 
@@ -2662,7 +2826,7 @@
    WHATSAPP - MÓVIL
    ========================================================= */
 
-@media (max-width: 560px) {
+@media (max-width: 578px) {
   .whatsapp-float {
     right: 16px;
     bottom: 16px;
@@ -2681,4 +2845,134 @@
 
     border-radius: 16px;
   }
+  /* ---------- FOOTER ---------- */
+
+.hb-footer {
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.hb-footer-content {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 20px;
+}
+
+.hb-footer-brand {
+  justify-content: center;
+  grid-column: auto;
+  width: 100%;
+}
+
+.hb-footer-copyright {
+  width: 100%;
+  text-align: center;
+}
+
+.hb-footer-social {
+  justify-content: center;
+  width: 100%;
+}
+/* =========================================================
+   HEADER - MÓVIL
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  @media (max-width: 900px) {
+
+  .hb-header-inner {
+    position: relative;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 0;
+  }
+
+  /* HAMBURGUESA */
+  .hb-menu-toggle {
+    display: flex;
+
+    margin-left: auto;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 8px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+  }
+
+  /* MENÚ */
+  .hb-mobile-menu {
+    position: static;
+
+    transform: none;
+
+    width: 100%;
+
+    display: none;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 1rem;
+
+    padding-top: 1rem;
+    margin-top: 1rem;
+
+    white-space: normal;
+  }
+
+  .hb-mobile-menu.is-open {
+    display: flex;
+  }
+
+  /* NAV */
+  .hb-nav {
+    position: static;
+
+    transform: none;
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 0;
+  }
+
+  .hb-nav a {
+    width: 100%;
+
+    padding: 0.85rem 0.5rem;
+
+    white-space: normal;
+  }
+
+  /* LOGIN */
+  .hb-header-actions {
+    width: 100%;
+
+    margin-left: 0;
+  }
+
+  .hb-header-actions a {
+    width: 100%;
+  }
+}}
 }

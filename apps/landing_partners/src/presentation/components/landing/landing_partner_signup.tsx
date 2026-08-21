@@ -43,7 +43,8 @@ const CONTACT_METHODS = [
       </svg>
     ),
     title: "LinkedIn",
-    text: "https://www.linkedin.com/in/repo-novatronic-8b1149430/?isSelfProfile=true",
+    text: "ZENTRIX LATAM",
+    url: "https://www.linkedin.com/in/zentrix-latam-8b1149430/?isSelfProfile=true",
   },
   {
     icon: (
@@ -148,26 +149,48 @@ export function LandingPartnerSignup() {
           </p>
 
           <div className="hb-contact-list">
-            {CONTACT_METHODS.map((item) => (
-              <div
-                key={item.title}
-                className="hb-contact-card"
-              >
-                <div className="hb-contact-icon">
-                  {item.icon}
-                </div>
+            {CONTACT_METHODS.map((item) => {
+  const content = (
+    <>
+      <div className="hb-contact-icon">
+        {item.icon}
+      </div>
 
-                <div className="hb-contact-details">
-                  <strong className="hb-contact-name">
-                    {item.title}
-                  </strong>
+      <div className="hb-contact-details">
+        <strong className="hb-contact-name">
+          {item.title}
+        </strong>
 
-                  <span className="hb-contact-desc">
-                    {item.text}
-                  </span>
-                </div>
-              </div>
-            ))}
+        <span className="hb-contact-desc">
+          {item.text}
+        </span>
+      </div>
+    </>
+  );
+
+  if ("url" in item && item.url) {
+    return (
+      <a
+        key={item.title}
+        href={item.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hb-contact-card"
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <div
+      key={item.title}
+      className="hb-contact-card"
+    >
+      {content}
+    </div>
+  );
+})}
           </div>
 
         </div>
