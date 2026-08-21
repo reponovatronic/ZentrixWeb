@@ -129,3 +129,20 @@ export function WhatsAppButton() {
     </>
   );
 }
+
+export function openWhatsApp(name: string, phone: string) {
+  if (!name.trim() || !phone.trim()) {
+    return;
+  }
+
+  const whatsappNumber = "51935624189";
+
+  const message = encodeURIComponent(
+    `Hola, soy ${name.trim()}. Mi número es ${phone.trim()}. Quiero saber más información sobre ZENTRIX.`
+  );
+
+  window.open(
+    `https://wa.me/${whatsappNumber}?text=${message}`,
+    "_blank"
+  );
+}
