@@ -77,8 +77,8 @@ const CONTACT_METHODS = [
     </svg>
     ),
     title: "Tik Tok",
-    text: "@reponovatronic",
-    url: "https://www.tiktok.com/@reponovatronic",},
+    text: "@Zentrix_Latam",
+    url: "https://www.tiktok.com/@Zentrix_Latam",},
 
 ] as const;
 const EMPTY_FORM: PartnerSignupRequest = {
