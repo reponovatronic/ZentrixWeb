@@ -65,6 +65,20 @@ const CONTACT_METHODS = [
     title: "Correo",
     text: "ventas@zentrixlatam.com",
   },
+  {icon: (
+      <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-3.77V2h-3.62v13.044a2.92 2.92 0 1 1-2.92-2.92c.247 0 .49.031.72.09v-3.7a6.623 6.623 0 1 0 5.82 6.53V8.696a8.39 8.39 0 0 0 4.91 1.574V6.686h-1.14z" />
+    </svg>
+    ),
+    title: "Tik Tok",
+    text: "@reponovatronic",
+    url: "https://www.tiktok.com/@reponovatronic",},
 
 ] as const;
 const EMPTY_FORM: PartnerSignupRequest = {

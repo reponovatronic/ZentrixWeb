@@ -298,7 +298,7 @@
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
-
+  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -459,7 +459,6 @@
   line-height: 1.6;
 
   color: #cbd5e1;
-
   text-align: center;
 }
 
@@ -851,23 +850,20 @@
 
 .clients-window {
   width: 100%;
-
   overflow: hidden;
 }
 
 .clients-track {
   display: flex;
-
-  width: 240%;
+  width: 250%;
   height: 110px;
-
+ gap: 0.5rem;
   will-change: transform;
 }
 
 .client-card {
   flex: 0 0 calc(100% / 12);
-
-  width: calc(100% / 12);
+  min-width: 0;
   height: 110px;
 
   display: flex;
@@ -877,6 +873,7 @@
   padding: 1rem;
 
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .client-card img {
@@ -885,8 +882,8 @@
   width: auto;
   height: auto;
 
-  max-width: 150px;
-  max-height: 65px;
+  max-width: calc(100% - 1rem);
+  max-height: 60px;
 
   object-fit: contain;
 }
@@ -987,7 +984,7 @@
   font-weight: 700;
 
   letter-spacing: 0.12em;
-
+  padding-bottom: 20px;
   color: white;
 }
 
@@ -1120,7 +1117,7 @@
 
 .hb-features-grid {
   display: grid;
-
+  padding: 0px 8px;
   grid-template-columns:
     repeat(3, minmax(0, 1fr));
 
@@ -2738,11 +2735,19 @@
 
   .carousel-window {
     height: 280px;
-
     border-radius: 18px;
+    padding: 10px;
+    box-sizing: border-box;
   }
 
-  .clients-track {
+  .carousel-img {
+    inset: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    border-radius: 12px;
+  }
+
+   .clients-track {
     height: 75px;
   }
 
@@ -2751,8 +2756,8 @@
   }
 
   .client-card img {
-    max-width: 110px;
-    max-height: 45px;
+    max-width: calc(100% - 0.5rem);
+    max-height: 40px;
   }
 
   .clients-title {
